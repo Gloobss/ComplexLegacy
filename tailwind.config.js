@@ -9,7 +9,7 @@ export default {
       colors: {
         // Alias "gta" -> Complex UI (opción 2 con más contraste)
         gta: {
-          black:    'rgba(10,10,12,0.92)', // panel-base (fondo principal)
+          black:    'rgba(16, 13, 19, 0.92)', // panel-base (fondo principal)
           graphite: '#111116',             // superficie elevada
           dark:     '#16161c',             // tono intermedio oscuro
           medium:   '#1e1f27',             // bordes/sombras suaves
@@ -49,12 +49,12 @@ export default {
         floatSmooth: { '0%, 100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-10px)' } },
       },
       backgroundImage: {
-        'gta-gradient': 'linear-gradient(135deg, #0a0a0c 0%, #16161c 100%)',
-        'loading-gradient': 'linear-gradient(90deg, transparent, rgba(255,214,90,0.12), transparent)',
+        'gta-gradient': 'linear-gradient(135deg, #0a0a0c 2%, #16161c 100%)',
+        'loading-gradient': 'linear-gradient(90deg, transparent, rgba(10, 4, 24, 0.84), transparent)',
       },
       boxShadow: {
-        gta: '0 4px 30px rgba(0, 0, 0, 0.3)',
-        'gta-hover': '0 8px 40px rgba(0, 0, 0, 0.4)',
+        gta: '0 4px 30px rgba(0, 0, 0, 0.76)',
+        'gta-hover': '0 8px 40px rgba(0, 0, 0, 0.94)',
         card: '0 2px 20px rgba(0, 0, 0, 0.1)',
         'card-hover': '0 10px 40px rgba(0, 0, 0, 0.15)',
       },

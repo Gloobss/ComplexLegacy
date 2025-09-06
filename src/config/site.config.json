@@ -166,38 +166,118 @@
     ]
   },
   "rules": [
-    { "id": "requisitos", "title": "Requisitos de acceso", "description": "Servidor +18; micrófono de buena calidad; conocer y aceptar normativas antes de entrar." },
-    { "id": "ic-ooc", "title": "IC y OOC separados", "description": "No mezclar canales. Prohibido usar apodos de Discord u OOC en rol. Usa /ayuda para staff y /pm [ID] [mensaje] para mensajes privados." },
-    { "id": "voz", "title": "Comunicación en voz", "description": "Prohibido usar chats de voz externos como radio IC. Abatido/esposado no habla por radio." },
-    { "id": "911", "title": "Emergencias", "description": "Usa /911 EMS para médicos y /911 para policía. Llamadas falsas están prohibidas." },
-    { "id": "frp", "title": "Valora tu vida (FRP)", "description": "Actúa como en la vida real, priorizando tu seguridad. No aceleres ni arriesgues sin sentido bajo amenaza." },
-    { "id": "mg", "title": "Metagaming (MG)", "description": "Prohibido usar información OOC en IC. Nada de 'mira Discord' o similares." },
-    { "id": "pg", "title": "Powergaming (PG)", "description": "Prohibido forzar acciones irreales o sin dar opción de respuesta. Lesiones por choques deben rolearse." },
-    { "id": "dm", "title": "DM/VDM", "description": "Prohibido agredir/matar sin contexto IC o usar vehículos como arma sin rol previo." },
-    { "id": "fairplay", "title": "Fair-Play", "description": "Prohibido abusar de bugs, repetir estrategias abusivas, o aprovechar desync. Coopera para continuar roles." },
-    { "id": "evasiones", "title": "Evasión/Forzar rol", "description": "Prohibido desconectarse para evitar consecuencias o estirar situaciones sin sentido buscando ventaja." },
-    { "id": "equipamiento", "title": "Equipamiento/Mods/Bugs", "description": "Prohibida ropa que haga invisible, macros/binds externos y exploits. Devoluciones solo con video." },
-    { "id": "combat-storing", "title": "Combat Storing", "description": "Prohibido guardar/dropear/transferir objetos durante persecuciones o bajo amenaza para evadir consecuencias." },
-    { "id": "dni", "title": "DNI y Licencia", "description": "Un solo ítem sirve como DNI y licencia. Debes portarlo; no tenerlo permite multa o procesamiento IC." },
-    { "id": "pistolera", "title": "Porte visible", "description": "Pistolera visible implica porte de arma IC, aunque no esté en inventario." },
-    { "id": "reconocimiento", "title": "Reconocimiento de personas", "description": "Con máscara no se reconoce a nadie. Bandas se reconocen por prendas/colores representativos. Tatuajes/cicatrices son pistas, no prueba inmediata." },
-    { "id": "toxicidad", "title": "Toxicidad", "description": "IC permitida si eleva el rol. OOC prohibida (Discord/streams). Racismo/xenofobia/homofobia/doxxing/stream sniping: bannables." },
-    { "id": "discord", "title": "Uso de Discord oficial", "description": "Complejo Legacy, LSPD, EMS, ilegales y negocios: uso coherente. Prohibidas reacciones/mensajes de burla. Hate sin crítica constructiva puede acarrear ban permanente." },
-    { "id": "reportes", "title": "Reportes y evidencias", "description": "Tickets con video como prueba. Reportado tiene 24h para responder; staff 24h para resolver. Soporte: dudas claras; no pedir ubicaciones IC." },
-    { "id": "vehiculos", "title": "Vehículos y choques", "description": "Prohibidos choques intencionales. Por desync, coordina por /ooc o /pm y continúa el rol." },
-    { "id": "persecuciones", "title": "Persecuciones y pinchazos", "description": "Spikes solo si: intento de homicidio/lesión a jugador o NPC; 3 saltos consecutivos para evadir; atropello/choque grave a NPC. Código 100 solo bajo normativa interna." },
-    { "id": "zonas", "title": "Zonas seguras", "description": "Comisarías, hospitales, mecánicos, tiendas, restaurantes y bares. No iniciar rol agresivo salvo persecución en curso, rol previo de peso o si alguien entra para evadir un rol activo." },
-    { "id": "cacheos", "title": "Cacheos válidos", "description": "Arma visible; máscara total; vehículo/placa ligado a delito reciente; salida de zona con disparos/entorno sospechoso. Incautación de dinero/ítems ilícitos si el rol lo justifica. Todo cacheo se rolea y documenta." },
-    { "id": "secuestros", "title": "Secuestros", "description": "Requieren motivo IC de peso (insultos/provocaciones, amenazas, disputa territorial con soporte del sistema). Máx 30 min. Tortura solo con silla (script). Prohibido secuestrar a alguien abatido en segunda fase." },
-    { "id": "robos", "title": "Robos", "description": "Próximamente normativa completa. Por ahora: prohibido a civiles/policías. Entre organizaciones, permitido con motivo de peso y evidencia en video; se puede robar inventario o vehículo." },
-    { "id": "represarias", "title": "Represalias (ajuste de cuentas)", "description": "Prohíbe hostigar o repetir secuestros/robos por la misma causa. Se requieren motivos IC nuevos y coherentes." },
-    { "id": "roles18", "title": "Roles +18 y sensibles", "description": "Solo con consentimiento OOC explícito. Prohibidos con menores. Prohibido cualquier rol sexual sin permiso." },
-    { "id": "pk", "title": "PK", "description": "Siempre rolea heridas/dolor al ser abatido. Puedes recordar lo ocurrido antes de caer. Espera 15 minutos para volver a la escena o tomar represalia." },
-    { "id": "ck", "title": "CK y CK Administrativo", "description": "CK es muerte definitiva; no parentesco con PJ anterior. CK Administrativo por reincidencias graves o falta de valoración de vida." },
-    { "id": "rk", "title": "RK (Revenge Kill)", "description": "Venganza sin motivo de peso está prohibida. Planes de ajuste coherentes y no inmediatos pueden ser válidos." },
-    { "id": "vip", "title": "VIP y donaciones", "description": "Personales e intransferibles. Sin reembolsos reales. MLO por temporada (3 semanas para solicitar). Locales inactivos +15 días pueden retirarse; en donación de por vida se devuelve valor en coins IC. Fraude → ban permanente." },
-    { "id": "staff", "title": "Discrecionalidad administrativa", "description": "Regla 0: el staff puede sancionar conductas no listadas que perjudiquen la experiencia. Las normas se interpretan según su espíritu; evita buscar vacíos." }
-  ],
+  {
+    "id": "requisitos-acceso",
+    "title": "1. Requisitos de acceso",
+    "description": "El servidor es +18.\nSe requiere un micrófono de buena calidad y uso constante.\nTodo jugador debe conocer y comprender estas normativas antes de ingresar."
+  },
+  {
+    "id": "conducta-toxicidad",
+    "title": "2. Conducta y Toxicidad",
+    "description": "Respeto absoluto a todos los miembros.\n- Toxicidad IC: permitida solo si aporta al rol (insultos en riñas, provocaciones, disputas). Debe elevar el contexto, no romperlo.\n- Toxicidad OOC (Discord, streams, chats): totalmente prohibida.\n- Prohibido incitar odio o desprestigiar al servidor/staff en Discord o redes: puede implicar ban permanente.\n- Prohibido humillar sin coherencia a jugadores abatidos (escupir, orinar, etc.).\n- Permitido: provocar IC con fotos desafiantes que escalen un conflicto IC."
+  },
+  {
+    "id": "discord-oficial",
+    "title": "3. Uso de Discord",
+    "description": "Todos los Discord oficiales (ComplexLegacy, LSPD, EMS, organizaciones, negocios) deben usarse con coherencia y respeto.\n- Prohibidas reacciones/mensajes de burla o toxicidad en contenido compartido.\n- Stream sniping, doxxing o publicidad de otros servidores: prohibidos y sancionables.\n- Reportes: vía ticket con video como evidencia. El reportado tiene 24h para responder; el staff 24h para resolver.\n- Soporte: preguntas claras; no pedir ubicaciones IC (trabajos, puntos ilegales).\n- Tickets privados: para reportar staff o situaciones sensibles; visibles solo por la administración."
+  },
+  {
+    "id": "ic-ooc",
+    "title": "4. Comunicación IC y Canales",
+    "description": "IC vs OOC nunca deben mezclarse.\n- /me: describe acciones de tu personaje.\n- /do: describe información objetiva del entorno (sin mentir).\n- Emergencias: /911 EMS para médicos y /911 para policía.\n- Prohibido usar Discord u otras apps como radio IC.\n- Abatido o esposado: no puedes hablar por radio ni por voz.\n- Llamadas falsas a servicios: prohibidas."
+  },
+  {
+    "id": "interpretacion",
+    "title": "5. Interpretación de Personaje",
+    "description": "Tu personaje debe tener historia coherente y justificada.\n- Personajes de sexo distinto: rolear consistentemente (femenino, masculino, trans).\n- DNI/licencia: un solo ítem válido para identificación y conducir; debes portarlo en inventario. No tenerlo permite multa o procesamiento IC.\n- Organizaciones ilegales: portar prendas/colores representativos en roles agresivos. Prohibido pertenecer a una organización y no usar sus colores.\n- Reconocimiento: con máscara no se reconoce a nadie. Bandas se reconocen por prendas/colores. Tatuajes/cicatrices son pistas, no prueba inmediata.\n- FRP: siempre valora tu vida."
+  },
+  {
+    "id": "sistema-rol",
+    "title": "6. Reglas de Juego y Antiabuso",
+    "description": "- Metagaming (MG): prohibido usar información OOC en IC.\n- Powergaming (PG): prohibido forzar acciones irreales o impedir reacción. Choques graves deben rolearse como lesiones.\n- DM/VDM: prohibido agredir o matar sin contexto IC; prohibido usar vehículos como arma sin rol previo.\n- Fair-Play: prohibido abusar de bugs/animaciones, repetir estrategias abusivas o aprovechar el desync.\n- Evasión de rol: prohibido desconectarse o actuar incoherente para evitar consecuencias.\n- Forzar rol: prohibido crear situaciones absurdas para obtener beneficio."
+  },
+  {
+    "id": "equipamiento",
+    "title": "7. Equipamiento, Mods y Bugs",
+    "description": "Prohibido usar ropa que vuelva partes del cuerpo invisibles.\nProhibidos macros, binds o programas externos.\nAprovecharse de bugs/exploits: baneo permanente.\n- Combat storing: prohibido almacenar/dropear/transferir objetos durante persecuciones o bajo amenaza para evadir consecuencias.\n- Devoluciones: solo con video como evidencia."
+  },
+  {
+    "id": "identificacion-evidencia",
+    "title": "8. Identificación y Evidencia",
+    "description": "El DNI/licencia es el único documento válido IC y debe portarse en inventario.\nNo tenerlo: multa o procesamiento IC.\n- Pistolera visible implica porte de arma IC aunque no esté en inventario."
+  },
+  {
+    "id": "vehiculos-persecuciones",
+    "title": "9. Vehículos y Persecuciones",
+    "description": "Prohibidos choques intencionales. Si hay desync: coordina por /ooc o /pm y continúa el rol.\n- Pinchazos (spikes) permitidos solo si:\n  - Intento de homicidio/lesión a jugador o NPC.\n  - 3 intentos consecutivos de escape mediante saltos.\n  - Atropello/choque grave a NPC dejándolo inconsciente o muerto.\n- Código 100: solo bajo normativa interna LSPD."
+  },
+  {
+    "id": "zonas-especiales",
+    "title": "10. Zonas y Escenarios Especiales",
+    "description": "Zonas seguras: comisarías, hospitales, mecánicos, tiendas, restaurantes y bares.\nNo iniciar rol agresivo salvo:\n- Persecución en curso.\n- Rol previo de peso.\n- Si alguien entra a la zona para evadir un rol activo."
+  },
+  {
+    "id": "secuestros",
+    "title": "11. Secuestros",
+    "description": "Permitidos con motivo IC válido y de peso.\n- Motivos válidos: insultos/provocaciones, amenazas directas, disputa territorial justificada por sistema ilegal.\n- Motivos inválidos: choques, rumores o comentarios sin pruebas.\n- Duración máxima: 30 minutos.\n- Tortura: solo con silla (script disponible).\n- Prohibido secuestrar a alguien abatido en segunda fase."
+  },
+  {
+    "id": "robos",
+    "title": "12. Robos",
+    "description": "Normativa específica: Próximamente.\nPor ahora:\n- Prohibido a civiles o policías.\n- Entre organizaciones: permitido con motivo de peso y evidencia en video; se puede robar inventario o vehículo.\n- Prohibido robar sin motivo o escalar directo a DM."
+  },
+  {
+    "id": "represalias",
+    "title": "13. Normativa de Represalias (ajuste de cuentas)",
+    "description": "Prohíbe hostigar con secuestros/robos repetidos por la misma causa.\nPara nuevas represalias: exige motivos IC nuevos y coherentes.\nAbusar de esta normativa será sancionable."
+  },
+  {
+    "id": "roles-18",
+    "title": "14. Roles +18 y Sensibles",
+    "description": "Permitidos solo con consentimiento OOC explícito de todas las partes.\nProhibidos con menores de edad (IC u OOC).\nProhibido cualquier rol sexual sin permiso (p. ej., tocar a otro personaje sin autorización previa).\nEl staff podrá interrumpir cualquier rol +18 ante abuso o incomodidad."
+  },
+  {
+    "id": "fuerzas-orden",
+    "title": "15. Fuerzas del Orden",
+    "description": "Prohibido abatir oficiales por motivos ilógicos (p. ej., una parada de tránsito simple).\nLos ilegales pueden obligar a un oficial a valorar vida (entregar arma, retirarse) para escapar, pero no matarlo sin motivo de peso."
+  },
+  {
+    "id": "cacheos-validos",
+    "title": "15.1 Cacheos válidos",
+    "description": "- Portar arma visible.\n- Usar máscara que cubra totalmente el rostro.\n- Estar en vehículo/placa ligado a delito reciente (coincidencia válida).\n- Salir de zona con alertas de disparos/entorno sospechoso.\n- La policía puede incautar dinero o ítems ilícitos si el rol lo justifica.\n- Todo cacheo debe rolearse y documentarse."
+  },
+  {
+    "id": "estados-muerte",
+    "title": "16. Estados de Muerte",
+    "description": "- PK: debes rolear dolor/heridas al ser abatido. Puedes recordar lo ocurrido antes de caer. Espera 15 minutos para volver a la escena o tomar represalia.\n- CK: muerte definitiva; sin parentesco con PJ anterior.\n- CK Administrativo: por reincidencias graves o falta de valoración de vida.\n- RK: venganza sin motivo de peso está prohibida; planes coherentes, no inmediatos, pueden ser válidos."
+  },
+  {
+    "id": "nombres-personajes",
+    "title": "17. Nombres y Personajes",
+    "description": "Todos los personajes deben tener nombres realistas y únicos.\nProhibido usar nombres de famosos, marcas o memes.\nModelos irreales (clowns, mascotas) solo en eventos autorizados."
+  },
+  {
+    "id": "vip-donaciones",
+    "title": "18. VIP y Donaciones",
+    "description": "Donaciones personales e intransferibles; no existen reembolsos reales (devoluciones en coins IC cuando aplique).\n- MLO: solicitar cada temporada (plazo de 3 semanas).\n- Locales comerciales: inactivos +15 días pueden retirarse; en donación de por vida se devuelve el valor en coins IC.\n- Cambios de vehículos/casas solo por fallas.\n- Fraude en donaciones: ban permanente."
+  },
+  {
+    "id": "administracion",
+    "title": "19. Administración y Discrecionalidad",
+    "description": "Regla 0: el staff puede sancionar conductas no listadas que dañen la experiencia.\nLas normas se interpretan según su espíritu; evita buscar vacíos legales."
+  },
+  {
+    "id": "sanciones",
+    "title": "20. Sanciones",
+    "description": "Próximamente: tabla detallada de faltas (leve, media, grave, extrema) y su equivalencia en sanciones."
+  },
+  {
+    "id": "anexos",
+    "title": "21. Anexos",
+    "description": "Glosario: MG, PG, DM, PK, CK, RK, FRP.\nGuía rápida (TL;DR):\n- Respeta IC y OOC.\n- Usa /911 EMS y /911 policía.\n- Valora tu vida siempre.\n- No exploits, no cheats.\n- Roles agresivos requieren contexto.\n- Reportes solo con video.\n- Nombres realistas y únicos."
+  }
+],
+
   "team": [
     {
       "id": "john-doe",
