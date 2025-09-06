@@ -28,8 +28,8 @@ export const HomePage = () => {
       <main>
         <Hero />
         <Features />
+       <Rules />
         <Jobs />
-        <Rules />
         <Team />
         <Gallery />
       </main>

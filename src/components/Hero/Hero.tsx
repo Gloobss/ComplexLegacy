@@ -123,7 +123,7 @@ export const Hero = () => {
                 style={{ width: `${loadingProgress}%` }}
               />
             </div>
-            <p className="text-gta-light text-sm mt-2">Loading... {loadingProgress}%</p>
+            <p className="text-gta-light text-sm mt-2">Cargando... {loadingProgress}%</p>
           </div>
           <p className="text-gta-light text-sm animate-pulse">
             Press any key to continue
@@ -138,7 +138,7 @@ export const Hero = () => {
       {/* Background Image */}
       <div className="absolute inset-0">
         <img 
-          src={getAssetUrl("/images/hero/city-night.jpg")} 
+          src={getAssetUrl("/images/hero/legacyf.png")} 
           alt="Complex Legacy" 
           className="w-full h-full object-cover"
         />

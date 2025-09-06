@@ -11,7 +11,7 @@ export const Footer = () => {
           <div>
             <div className="flex items-center gap-3 mb-4">
               <div className="w-10 h-10 bg-gta-green flex items-center justify-center">
-                <span className="font-bebas text-xl text-white">RP</span>
+                <span className="font-bebas text-xl text-white">CL</span>
               </div>
               <span className="font-bebas text-2xl text-white">
                 {siteConfig.server.name}
@@ -24,26 +24,26 @@ export const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h3 className="font-bebas text-xl text-gta-gold mb-4">Quick Links</h3>
+            <h3 className="font-bebas text-xl text-gta-gold mb-4">Enlaces rápidos</h3>
             <ul className="space-y-2">
               <li>
                 <a href="#features" className="text-gta-light hover:text-white transition-colors">
-                  Features
+                  Características
                 </a>
               </li>
               <li>
                 <a href="#jobs" className="text-gta-light hover:text-white transition-colors">
-                  Jobs
+                  Trabajos
                 </a>
               </li>
               <li>
                 <a href="#rules" className="text-gta-light hover:text-white transition-colors">
-                  Rules
+                  Normativas
                 </a>
               </li>
               <li>
                 <a href="#team" className="text-gta-light hover:text-white transition-colors">
-                  Team
+                  Equipo
                 </a>
               </li>
             </ul>
@@ -51,7 +51,7 @@ export const Footer = () => {
 
           {/* Connect */}
           <div>
-            <h3 className="font-bebas text-xl text-gta-gold mb-4">Connect With Us</h3>
+            <h3 className="font-bebas text-xl text-gta-gold mb-4">Conéctate con nosotros</h3>
             <div className="flex gap-3 mb-4">
               <a
                 href={siteConfig.social.discord}
@@ -92,7 +92,7 @@ export const Footer = () => {
               )}
             </div>
             <div className="p-3 bg-gta-dark">
-              <p className="text-xs text-gta-light uppercase tracking-wider mb-1">Server IP</p>
+              <p className="text-xs text-gta-light uppercase tracking-wider mb-1">Conexión</p>
               <p className="text-white font-mono">{siteConfig.server.ip}</p>
             </div>
           </div>
@@ -102,12 +102,12 @@ export const Footer = () => {
         <div className="divider-gta" />
         <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-gta-light text-sm">
           <p>
-            © {siteConfig.legal.copyrightYear} {siteConfig.server.name}. All rights reserved.
+            © {siteConfig.legal.copyrightYear} {siteConfig.server.name}. Todos los derechos reservados.
           </p>
           <div className="flex items-center gap-4">
-            <Link to="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
+            <Link to="/privacy" className="hover:text-white transition-colors">Política de privacidad</Link>
             <span className="text-gta-medium">|</span>
-            <Link to="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
+            <Link to="/terms" className="hover:text-white transition-colors">Términos del servicio</Link>
           </div>
         </div>
       </div>

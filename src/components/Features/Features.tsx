@@ -84,10 +84,10 @@ export const Features = () => {
             ref={titleRef}
             className="text-5xl md:text-7xl font-bebas text-white mb-4"
           >
-            Server Features
+            Caracteristicas del Servidor
           </h2>
           <p className="text-xl text-gta-light max-w-2xl mx-auto">
-            Everything you need for the ultimate roleplay experience
+            Todo esta creado para ofrecerte la mejor experiencia de Roleplay
           </p>
         </div>
 

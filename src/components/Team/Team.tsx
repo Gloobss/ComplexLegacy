@@ -6,18 +6,33 @@ import siteConfig from '../../config/site.config.json'
 import { cn } from '../../utils/cn'
 import { getAssetUrl } from '../../utils/assetUrl'
 
+// Mapas con alias EN/ES para que funcione con cualquier rol del config
 const roleIcons: Record<string, React.ReactNode> = {
+  // EN
   'Server Owner': <Crown className="w-4 h-4" />,
   'Head Admin': <Shield className="w-4 h-4" />,
   'Developer': <Wrench className="w-4 h-4" />,
-  'Moderator': <MessageCircle className="w-4 h-4" />
+  'Moderator': <MessageCircle className="w-4 h-4" />,
+  // ES
+  'Dueño': <Crown className="w-4 h-4" />,
+  'Fundador': <Crown className="w-4 h-4" />,
+  'Administración General': <Shield className="w-4 h-4" />,
+  'Desarrollador': <Wrench className="w-4 h-4" />,
+  'Moderación': <MessageCircle className="w-4 h-4" />,
 }
 
 const roleColors: Record<string, string> = {
+  // EN
   'Server Owner': 'from-yellow-400 to-orange-500',
   'Head Admin': 'from-red-400 to-pink-500',
   'Developer': 'from-blue-400 to-cyan-500',
-  'Moderator': 'from-green-400 to-teal-500'
+  'Moderator': 'from-green-400 to-teal-500',
+  // ES
+  'Dueño': 'from-yellow-400 to-orange-500',
+  'Fundador': 'from-yellow-400 to-orange-500',
+  'Administración General': 'from-red-400 to-pink-500',
+  'Desarrollador': 'from-blue-400 to-cyan-500',
+  'Moderación': 'from-green-400 to-teal-500',
 }
 
 export const Team = () => {
@@ -139,10 +154,10 @@ export const Team = () => {
             ref={titleRef}
             className="text-4xl md:text-6xl font-gaming font-bold mb-4"
           >
-            <span className="gradient-text">Our Team</span>
+            <span className="gradient-text">Nuestro equipo</span>
           </h2>
           <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-            Meet the dedicated team behind the server
+            Conoce al equipo dedicado detrás del servidor
           </p>
         </div>
 
@@ -210,14 +225,14 @@ export const Team = () => {
         {/* Join Team CTA */}
         <div className="mt-16 text-center">
           <div className="inline-block">
-            <p className="text-gray-400 mb-4">Want to join our team?</p>
+            <p className="text-gray-400 mb-4">¿Quieres unirte al equipo?</p>
             <a 
               href={siteConfig.social.discord}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-primary"
             >
-              Apply on Discord
+              Postular en Discord
             </a>
           </div>
         </div>

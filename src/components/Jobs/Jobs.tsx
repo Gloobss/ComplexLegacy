@@ -87,10 +87,10 @@ export const Jobs = () => {
           <div ref={sidebarRef} className="lg:col-span-3">
             <div ref={titleRef} className="mb-8">
               <h2 className="text-5xl md:text-7xl font-bebas text-white mb-2">
-                Available Jobs
+                Trabajos disponibles
               </h2>
               <p className="text-gta-light">
-                Choose your career path
+                Elige tu camino profesional
               </p>
             </div>
 
@@ -103,7 +103,7 @@ export const Jobs = () => {
               >
                 <span className="flex items-center gap-3">
                   <ChevronRight className="w-4 h-4" />
-                  All Jobs
+                  Todos los trabajos
                 </span>
               </button>
               {siteConfig.jobs.categories.map((category) => (
@@ -125,11 +125,11 @@ export const Jobs = () => {
             {/* Stats */}
             <div className="mt-8 p-4 bg-gta-graphite/50">
               <div className="stat-item mb-3">
-                <p className="stat-label">Total Jobs</p>
+                <p className="stat-label">Trabajos totales</p>
                 <p className="stat-value">{siteConfig.jobs.list.length}</p>
               </div>
               <div className="stat-item">
-                <p className="stat-label">Active Workers</p>
+                <p className="stat-label">Trabajadores activos</p>
                 <p className="stat-value">1,337</p>
               </div>
             </div>
@@ -171,7 +171,7 @@ export const Jobs = () => {
                       hoveredJob === job.id ? 'max-h-40' : 'max-h-0'
                     }`}>
                       <div className="border-t border-gta-medium pt-4">
-                        <p className="text-xs text-gta-gold uppercase tracking-wider mb-2">Requirements</p>
+                        <p className="text-xs text-gta-gold uppercase tracking-wider mb-2">Requisitos</p>
                         <ul className="space-y-1">
                           {job.requirements.map((req, index) => (
                             <li key={index} className="text-sm text-gta-light flex items-start gap-2">
@@ -188,7 +188,7 @@ export const Jobs = () => {
                       hoveredJob === job.id ? 'opacity-100' : 'opacity-0'
                     }`}>
                       <button className="w-full btn-gta text-sm">
-                        Apply Now
+                        Postular ahora
                       </button>
                     </div>
                   </div>

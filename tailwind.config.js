@@ -9,7 +9,7 @@ export default {
       colors: {
         // Alias "gta" -> Complex UI (opción 2 con más contraste)
         gta: {
-          black:    'rgba(16, 13, 19, 0.92)', // panel-base (fondo principal)
+          black:    'rgba(16, 13, 19, 1)', // panel-base (fondo principal)
           graphite: '#111116',             // superficie elevada
           dark:     '#16161c',             // tono intermedio oscuro
           medium:   '#1e1f27',             // bordes/sombras suaves
