@@ -139,7 +139,7 @@ export const Hero = () => {
       <div className="absolute inset-0">
         <img 
           src={getAssetUrl("/images/hero/city-night.jpg")} 
-          alt="Los Santos City" 
+          alt="Complex Legacy" 
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-gta-black via-transparent to-gta-black/80" />
@@ -161,8 +161,8 @@ export const Hero = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-gta-black/80 via-transparent to-transparent" />
                 <div className="absolute bottom-0 left-0 p-8">
-                  <h2 className="text-4xl font-bebas text-gta-gold mb-2">Welcome to</h2>
-                  <h1 className="text-6xl font-bebas text-white text-shadow-lg">Los Santos</h1>
+                  <h2 className="text-4xl font-bebas text-gta-gold mb-2">Bienvenido a</h2>
+                  <h1 className="text-6xl font-bebas text-white text-shadow-lg">Complex Legacy</h1>
                 </div>
               </div>
             </div>
