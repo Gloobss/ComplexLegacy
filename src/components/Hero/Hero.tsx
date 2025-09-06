@@ -10,9 +10,11 @@ export const Hero = () => {
   const contentRef = useRef<HTMLDivElement>(null)
   const characterRef = useRef<HTMLDivElement>(null)
   const statsRef = useRef<HTMLDivElement>(null)
+
   const [isLoading, setIsLoading] = useState(true)
   const [loadingProgress, setLoadingProgress] = useState(0)
   const [playerCount, setPlayerCount] = useState(0)
+  const [tipIndex, setTipIndex] = useState(0)
 
   // Loading animation
   useEffect(() => {
@@ -26,13 +28,13 @@ export const Hero = () => {
         return prev + 2
       })
     }, 30)
-
     return () => clearInterval(timer)
   }, [])
 
   // Player count animation
   useEffect(() => {
-    const targetCount = Math.floor(Math.random() * (siteConfig.server.maxPlayers - 100)) + 100
+    const min = Math.min(100, siteConfig.server.maxPlayers)
+    const targetCount = Math.floor(Math.random() * (siteConfig.server.maxPlayers - min)) + min
     const duration = 2000
     const increment = targetCount / (duration / 16)
     let current = 0
@@ -48,6 +50,15 @@ export const Hero = () => {
     }, 16)
 
     return () => clearInterval(timer)
+  }, [])
+
+  // Tips ticker (rota cada 4s)
+  useEffect(() => {
+    if (!siteConfig.server.loadingTips?.length) return
+    const t = setInterval(() => {
+      setTipIndex(i => (i + 1) % siteConfig.server.loadingTips.length)
+    }, 4000)
+    return () => clearInterval(t)
   }, [])
 
   useGSAP(() => {
@@ -78,7 +89,7 @@ export const Hero = () => {
       // Parallax on scroll with unique IDs
       ScrollTrigger.create({
         id: 'hero-character-parallax',
-        trigger: containerRef.current,
+        trigger: containerRef.current!,
         start: 'top top',
         end: 'bottom top',
         scrub: 1.5,
@@ -90,7 +101,7 @@ export const Hero = () => {
 
       ScrollTrigger.create({
         id: 'hero-content-parallax',
-        trigger: containerRef.current,
+        trigger: containerRef.current!,
         start: 'top top',
         end: 'bottom top',
         scrub: 1,
@@ -100,7 +111,17 @@ export const Hero = () => {
         })
       })
 
-      // Cleanup function
+      // (Opcional) Animación suave para píldoras y miniaturas
+      // gsap.from(['.feature-pill', '.mini-thumb'], {
+      //   y: 20,
+      //   opacity: 0,
+      //   duration: 0.5,
+      //   stagger: 0.05,
+      //   ease: 'power2.out',
+      //   delay: 0.2
+      // })
+
+      // Cleanup
       return () => {
         ScrollTrigger.getById('hero-character-parallax')?.kill()
         ScrollTrigger.getById('hero-content-parallax')?.kill()
@@ -126,12 +147,16 @@ export const Hero = () => {
             <p className="text-gta-light text-sm mt-2">Cargando... {loadingProgress}%</p>
           </div>
           <p className="text-gta-light text-sm animate-pulse">
-            Press any key to continue
+            Presiona cualquier tecla para continuar
           </p>
         </div>
       </div>
     )
   }
+
+  // Helpers para la UI derecha
+  const featurePills = (siteConfig.features || []).slice(0, 3)
+  const miniImages = (siteConfig.gallery?.images || []).slice(0, 4)
 
   return (
     <section ref={containerRef} className="relative min-h-screen overflow-hidden bg-gradient-to-br from-gta-black via-gta-graphite to-gta-black">
@@ -154,11 +179,12 @@ export const Hero = () => {
             {/* Left Side - Character/Visual */}
             <div ref={characterRef} className="relative">
               <div className="aspect-[3/4] bg-gradient-to-br from-gta-dark to-gta-graphite rounded-lg overflow-hidden shadow-2xl">
-                <img 
-                  src="https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?w=600&h=800&fit=crop&q=80" 
-                  alt="GTA Character" 
-                  className="w-full h-full object-cover"
-                />
+             <img 
+  src="https://r2.fivemanage.com/kMtLpNIqKRhMGpzrcZnQY/imagen1.png" 
+  alt="GTA Character" 
+  className="w-full h-full object-cover object-center"
+/>
+
                 <div className="absolute inset-0 bg-gradient-to-t from-gta-black/80 via-transparent to-transparent" />
                 <div className="absolute bottom-0 left-0 p-8">
                   <h2 className="text-4xl font-bebas text-gta-gold mb-2">Bienvenido a</h2>
@@ -169,7 +195,8 @@ export const Hero = () => {
 
             {/* Right Side - Server Info */}
             <div ref={contentRef}>
-              <div className="mb-8">
+              {/* Encabezado */}
+              <div className="mb-6">
                 <h1 className="text-5xl md:text-7xl font-bebas text-white mb-2">
                   {siteConfig.server.name}
                 </h1>
@@ -178,22 +205,45 @@ export const Hero = () => {
                 </p>
               </div>
 
-              <p className="text-gta-light mb-8 text-lg leading-relaxed">
+              {/* Ticker de tips */}
+              {siteConfig.server.loadingTips?.length > 0 && (
+                <div className="mb-6 p-3 rounded bg-gta-graphite/50 backdrop-blur-xs border border-gta-medium">
+                  <p className="text-sm text-gta-light">
+                    <span className="text-gta-gold mr-2">Sugerencia:</span>
+                    {siteConfig.server.loadingTips[tipIndex]}
+                  </p>
+                </div>
+              )}
+
+              {/* Descripción */}
+              <p className="text-gta-light mb-6 text-lg leading-relaxed">
                 {siteConfig.server.description}
               </p>
+
+              {/* Feature pills */}
+              {featurePills.length > 0 && (
+                <div className="flex flex-wrap gap-2 mb-8">
+                  {featurePills.map((f) => (
+                    <span key={f.id} className="feature-pill inline-flex items-center gap-2 px-3 py-1 rounded border border-gta-medium bg-gta-graphite/50 text-sm text-white">
+                      {/* Si tuvieras iconos lucide por id, los podrías mapear aquí; mantenemos texto simple */}
+                      <span className="uppercase tracking-wider text-gta-gold text-xs">{f.title}</span>
+                    </span>
+                  ))}
+                </div>
+              )}
 
               {/* Server Stats */}
               <div ref={statsRef} className="grid grid-cols-2 gap-4 mb-8">
                 <div className="stat-item">
-                  <p className="stat-label">Players Online</p>
+                  <p className="stat-label">Jugadores Online</p>
                   <p className="stat-value">{playerCount}/{siteConfig.server.maxPlayers}</p>
                 </div>
                 <div className="stat-item">
-                  <p className="stat-label">Server Status</p>
+                  <p className="stat-label">Estado del Servidor</p>
                   <p className="stat-value text-gta-green">ONLINE</p>
                 </div>
                 <div className="stat-item">
-                  <p className="stat-label">Active Jobs</p>
+                  <p className="stat-label">Trabajos Activos</p>
                   <p className="stat-value">{siteConfig.jobs.list.length}+</p>
                 </div>
                 <div className="stat-item">
@@ -202,10 +252,28 @@ export const Hero = () => {
                 </div>
               </div>
 
+              {/* Mini-galería (rellena visualmente el lado derecho) */}
+              {miniImages.length > 0 && (
+                <div className="mb-8">
+                  <div className="flex gap-3 overflow-x-auto pb-2">
+                    {miniImages.map(img => (
+                      <div key={img.id} className="mini-thumb relative w-28 h-16 flex-shrink-0 rounded overflow-hidden border border-gta-medium">
+                        <img
+                          src={getAssetUrl(img.src)}
+                          alt={img.alt}
+                          className="w-full h-full object-cover"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-gta-black/40 to-transparent" />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
               {/* CTA Buttons */}
               <div className="flex flex-wrap gap-4">
                 <button className="btn-gta">
-                  Connect to Server
+                  Conectar al Servidor
                 </button>
                 <a 
                   href={siteConfig.server.discord}
@@ -213,7 +281,7 @@ export const Hero = () => {
                   rel="noopener noreferrer"
                   className="btn-gta-outline"
                 >
-                  Join Discord
+                  Unirse a Discord
                 </a>
                 {siteConfig.whitelist.enabled && (
                   <a 
@@ -222,7 +290,7 @@ export const Hero = () => {
                     rel="noopener noreferrer"
                     className="btn-gta-gold"
                   >
-                    Apply for Whitelist
+                    Aplicar a Whitelist
                   </a>
                 )}
               </div>
@@ -231,14 +299,14 @@ export const Hero = () => {
               <div className="mt-8 p-4 bg-gta-graphite/50 backdrop-blur-sm rounded">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-gta-light text-sm">Server Address</p>
+                    <p className="text-gta-light text-sm">Dirección del Servidor</p>
                     <p className="text-white font-mono text-lg">{siteConfig.server.ip}</p>
                   </div>
                   <button 
                     onClick={() => navigator.clipboard.writeText(siteConfig.server.ip)}
                     className="px-4 py-2 bg-gta-dark hover:bg-gta-medium transition-colors rounded"
                   >
-                    Copy IP
+                    Copiar IP
                   </button>
                 </div>
               </div>
