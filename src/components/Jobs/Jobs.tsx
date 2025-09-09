@@ -21,7 +21,7 @@ export const Jobs = () => {
 
   const filteredJobs = selectedCategory === 'all' 
     ? siteConfig.jobs.list 
-    : siteConfig.jobs.list.filter(job => job.category === selectedCategory)
+    : siteConfig.jobs.list.filter((job: any) => job.category === selectedCategory)
 
   // Initial animations for title and sidebar (only once)
   useGSAP(() => {
@@ -87,7 +87,7 @@ export const Jobs = () => {
           <div ref={sidebarRef} className="lg:col-span-3">
             <div ref={titleRef} className="mb-8">
               <h2 className="text-5xl md:text-7xl font-bebas text-white mb-2">
-                Trabajos disponibles
+                Postulaciones disponibles
               </h2>
               <p className="text-gta-light">
                 Elige tu camino profesional
@@ -103,10 +103,10 @@ export const Jobs = () => {
               >
                 <span className="flex items-center gap-3">
                   <ChevronRight className="w-4 h-4" />
-                  Todos los trabajos
+                  Todas las postulaciones
                 </span>
               </button>
-              {siteConfig.jobs.categories.map((category) => (
+              {siteConfig.jobs.categories.map((category: any) => (
                 <button
                   key={category.id}
                   onClick={() => setSelectedCategory(category.id)}
@@ -115,7 +115,7 @@ export const Jobs = () => {
                   }`}
                 >
                   <span className="flex items-center gap-3">
-                    {categoryIcons[category.id]}
+                    {categoryIcons[category.id as keyof typeof categoryIcons]}
                     {category.name}
                   </span>
                 </button>
@@ -125,7 +125,7 @@ export const Jobs = () => {
             {/* Stats */}
             <div className="mt-8 p-4 bg-gta-graphite/50">
               <div className="stat-item mb-3">
-                <p className="stat-label">Trabajos totales</p>
+                <p className="stat-label">Postulaciones totales</p>
                 <p className="stat-value">{siteConfig.jobs.list.length}</p>
               </div>
               <div className="stat-item">
@@ -138,7 +138,7 @@ export const Jobs = () => {
           {/* Right Content - Jobs Grid */}
           <div ref={contentRef} className="lg:col-span-9">
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
-              {filteredJobs.map((job) => (
+              {filteredJobs.map((job: any) => (
                 <div
                   key={job.id}
                   className="job-card group relative"
@@ -153,11 +153,11 @@ export const Jobs = () => {
                           {job.name}
                         </h3>
                         <p className="text-sm text-gta-gold uppercase tracking-wider">
-                          {siteConfig.jobs.categories.find(c => c.id === job.category)?.name}
+                          {siteConfig.jobs.categories.find((c: any) => c.id === job.category)?.name}
                         </p>
                       </div>
                       <div className="text-gta-green">
-                        {categoryIcons[job.category]}
+                        {categoryIcons[job.category as keyof typeof categoryIcons]}
                       </div>
                     </div>
 
@@ -173,7 +173,7 @@ export const Jobs = () => {
                       <div className="border-t border-gta-medium pt-4">
                         <p className="text-xs text-gta-gold uppercase tracking-wider mb-2">Requisitos</p>
                         <ul className="space-y-1">
-                          {job.requirements.map((req, index) => (
+                          {(job.requirements ?? []).map((req: string, index: number) => (
                             <li key={index} className="text-sm text-gta-light flex items-start gap-2">
                               <span className="text-gta-green mt-1">•</span>
                               <span>{req}</span>
@@ -187,9 +187,24 @@ export const Jobs = () => {
                     <div className={`mt-4 transition-all duration-500 ${
                       hoveredJob === job.id ? 'opacity-100' : 'opacity-0'
                     }`}>
-                      <button className="w-full btn-gta text-sm">
-                        Postular ahora
-                      </button>
+                      {job.applyUrl ? (
+                        <a
+                          href={job.applyUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="w-full btn-gta text-sm inline-flex items-center justify-center"
+                        >
+                          Postular ahora
+                        </a>
+                      ) : (
+                        <button
+                          className="w-full btn-gta text-sm opacity-70 cursor-not-allowed"
+                          disabled
+                          title="Próximamente"
+                        >
+                          Próximamente
+                        </button>
+                      )}
                     </div>
                   </div>
                 </div>
