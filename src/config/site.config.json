@@ -98,14 +98,14 @@
   ],
   "gallery": {
     "images": [
-      { "id": 1, "src": "/images/gallery/1.jpg", "alt": "Centro de la ciudad de noche", "title": "Downtown Los Santos", "category": "locations" },
-      { "id": 2, "src": "/images/gallery/2.jpg", "alt": "Persecución policial", "title": "High Speed Chase", "category": "action" },
-      { "id": 3, "src": "/images/gallery/3.jpg", "alt": "Encuentro automovilístico", "title": "Weekly Car Meet", "category": "events" },
-      { "id": 4, "src": "/images/gallery/4.jpg", "alt": "Evento de carreras", "title": "Street Racing", "category": "events" },
-      { "id": 5, "src": "/images/gallery/5.jpg", "alt": "Escena de roleplay", "title": "Bank Heist RP", "category": "roleplay" },
-      { "id": 6, "src": "/images/gallery/6.jpg", "alt": "Evento comunitario", "title": "Community Event", "category": "events" },
-      { "id": 7, "src": "/images/gallery/7.jpg", "alt": "Vehículos personalizados", "title": "Custom Rides", "category": "vehicles" },
-      { "id": 8, "src": "/images/gallery/8.jpg", "alt": "Evento especial", "title": "Special Event", "category": "events" }
+      { "id": 1, "src": "/images/gallery/1.webp", "alt": "FBI", "title": "Downtown Los Santos", "category": "locations" },
+      { "id": 2, "src": "/images/gallery/2.webp", "alt": "Evento", "title": "Bodas", "category": "action" },
+      { "id": 3, "src": "/images/gallery/3.webp", "alt": "Bandas", "title": "Ilegal", "category": "roleplay" },
+      { "id": 4, "src": "/images/gallery/4.webp", "alt": "Bandas", "title": "Ilegal", "category": "roleplay" },
+      { "id": 5, "src": "/images/gallery/5.webp", "alt": "Bandas", "title": "Ilegal", "category": "roleplay" },
+      { "id": 6, "src": "/images/gallery/6.webp", "alt": "Doctores", "title": "Community Event", "category": "events" },
+      { "id": 7, "src": "/images/gallery/7.webp", "alt": "Boda ", "title": "Eventos", "category": "vehicles" },
+      { "id": 8, "src": "/images/gallery/8.webp", "alt": "", "title": "Special Event", "category": "events" }
     ]
   },
   "jobs": {
@@ -304,7 +304,7 @@
       "id": "john-doe",
       "name": "Owner",
       "role": "Fundador",
-      "avatar": "/images/team/avatar1.jpg",
+      "avatar": "/images/team/avatar1.webp",
       "discord": "complex-owner",
       "description": "Dirección del proyecto y visión de rol."
     },
@@ -312,7 +312,7 @@
       "id": "jane-smith",
       "name": "Head Admin",
       "role": "Administración General",
-      "avatar": "/images/team/avatar2.jpg",
+      "avatar": "/images/team/avatar2.webp",
       "discord": "complex-admin",
       "description": "Moderación, soporte y normativa."
     },
