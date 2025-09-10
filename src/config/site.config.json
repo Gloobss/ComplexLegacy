@@ -52,7 +52,7 @@
     "maxPlayers": 256,
     "logo": "/images/legacy.png",
     "loadingTips": [
-      "Usa /911 EMS para médicos y /911 para policía",
+      "Usa /911EMS para médicos y /911 para policía",
       "Valora tu vida (FRP) y evita mezclar IC/OOC",
       "Reportes solo con video como evidencia en tickets",
       "Las represalias requieren motivo de peso y coherencia IC"
