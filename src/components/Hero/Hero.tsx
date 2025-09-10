@@ -59,9 +59,13 @@ export const Hero = () => {
     return () => clearInterval(t)
   }, [])
 
+  // Animaciones GSAP
   useGSAP(() => {
     if (!isLoading) {
       const tl = gsap.timeline()
+
+      // Limpia estilos inline antiguos
+      gsap.set([characterRef.current, contentRef.current, statsRef.current], { clearProps: 'all' })
 
       tl.from(characterRef.current, {
         x: -100,
@@ -69,13 +73,15 @@ export const Hero = () => {
         duration: 1.2,
         ease: 'power3.out'
       })
-        .from(
+        .fromTo(
           contentRef.current,
+          { opacity: 0, x: 50 },
           {
-            x: 50,
-            opacity: 0,
+            opacity: 1,
+            x: 0,
             duration: 1,
-            ease: 'power3.out'
+            ease: 'power3.out',
+            immediateRender: false
           },
           '-=0.8'
         )
@@ -128,6 +134,13 @@ export const Hero = () => {
     }
   }, [isLoading])
 
+  // Refrescar ScrollTrigger al cargar imágenes
+  useEffect(() => {
+    const onLoad = () => ScrollTrigger.refresh()
+    window.addEventListener('load', onLoad)
+    return () => window.removeEventListener('load', onLoad)
+  }, [])
+
   // Loading Screen
   if (isLoading) {
     return (
@@ -158,6 +171,7 @@ export const Hero = () => {
   return (
     <section
       ref={containerRef}
+      id="home"
       className="relative min-h-screen overflow-hidden bg-gradient-to-br from-gta-black via-gta-graphite to-gta-black"
     >
       {/* Fondo */}
@@ -268,7 +282,12 @@ export const Hero = () => {
               {/* CTAs */}
               <div className="flex flex-wrap gap-4">
                 <button className="btn-gta">Conectar al Servidor</button>
-                <a href={siteConfig.server.discord} target="_blank" rel="noopener noreferrer" className="btn-gta-outline">
+                <a
+                  href={siteConfig.server.discord}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-gta-outline"
+                >
                   Unirse a Discord
                 </a>
                 {siteConfig.whitelist.enabled && (
