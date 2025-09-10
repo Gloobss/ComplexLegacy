@@ -250,7 +250,7 @@ export const Hero = () => {
                 </div>
                 <div className="stat-item">
                   <p className="stat-label">Estado del Servidor</p>
-                  <p className="stat-value text-gta-green">ONLINE</p>
+                  <p className="stat-value text-gta-green">WIPE 80%</p>
                 </div>
                 <div className="stat-item">
                   <p className="stat-label">Trabajos Activos</p>
@@ -258,7 +258,7 @@ export const Hero = () => {
                 </div>
                 <div className="stat-item">
                   <p className="stat-label">Uptime</p>
-                  <p className="stat-value">99.9%</p>
+                  <p className="stat-value">Pronto</p>
                 </div>
               </div>
 

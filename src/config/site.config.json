@@ -304,7 +304,7 @@
       "id": "john-doe",
       "name": "Owner",
       "role": "Fundador",
-      "avatar": "/images/team/avatar1.webp",
+      "avatar": "/images/team/uwu.png",
       "discord": "complex-owner",
       "description": "Dirección del proyecto y visión de rol."
     },
@@ -312,7 +312,7 @@
       "id": "jane-smith",
       "name": "Head Admin",
       "role": "Administración General",
-      "avatar": "/images/team/avatar2.webp",
+      "avatar": "/images/team/avatar2.jpg",
       "discord": "complex-admin",
       "description": "Moderación, soporte y normativa."
     },
@@ -328,7 +328,7 @@
       "id": "sarah-jones",
       "name": "Moderator",
       "role": "Moderación",
-      "avatar": "/images/team/avatar4.jpg",
+      "avatar": "/images/team/avatar1.jpg",
       "discord": "complex-mod",
       "description": "Atención a jugadores y reportes."
     }

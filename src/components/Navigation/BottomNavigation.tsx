@@ -228,7 +228,7 @@ export const BottomNavigation = () => {
           {onlinePlayers !== null && (
             <>
               <span className="text-gta-medium">•</span>
-              <span className="text-white font-medium">{onlinePlayers}/128</span>
+              <span className="text-white font-medium">{onlinePlayers}/0</span>
             </>
           )}
         </div>
