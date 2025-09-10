@@ -110,10 +110,10 @@ export const Gallery = () => {
               ref={titleRef}
               className="text-4xl md:text-6xl font-gaming font-bold mb-4"
             >
-              <span className="gradient-text">Gallery</span>
+              <span className="gradient-text">Gallery De fotos</span>
             </h2>
             <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-              Capture the best moments from our server
+               Fotos destacadas dentro del servidor, capturando momentos memorables y la esencia de nuestra comunidad.
             </p>
           </div>
 
