@@ -31,23 +31,9 @@ export const Hero = () => {
     return () => clearInterval(timer)
   }, [])
 
-  // Counter de jugadores
+  // Contador de jugadores fijo en 0 (placeholder)
   useEffect(() => {
-    const min = Math.min(100, siteConfig.server.maxPlayers)
-    const targetCount = Math.floor(Math.random() * (siteConfig.server.maxPlayers - min)) + min
-    const duration = 2000
-    const increment = targetCount / (duration / 16)
-    let current = 0
-    const timer = setInterval(() => {
-      current += increment
-      if (current >= targetCount) {
-        setPlayerCount(targetCount)
-        clearInterval(timer)
-      } else {
-        setPlayerCount(Math.floor(current))
-      }
-    }, 16)
-    return () => clearInterval(timer)
+    setPlayerCount(0)
   }, [])
 
   // Tips rotativos
